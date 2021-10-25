@@ -12,8 +12,10 @@ RUN pip install -r /requirements.txt
 RUN mkdir /app
 #  switch to default dir
 WORKDIR /app
+# should error when not exist /app
 COPY ./app /app
 
-
+# create user
 RUN adduser -D user 
+# use user
 USER user

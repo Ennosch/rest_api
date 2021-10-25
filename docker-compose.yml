@@ -4,13 +4,15 @@ services:
   app:
     build:
      context: .
-    # map host - to image port
+    # map host port - to image port
     ports:
       - "8000:8000"
     volumes:
     # map volumes
       - ./app:/app
     # run shell 
-    # run django development server on all ip addresses on port 8000 ( mapped tp local machine)
+    # run django development server on all 
+    # ip addresses on port 8000 ( mapped tp local machine)
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
+    # run django development server on all available ip addr (0.0..)
