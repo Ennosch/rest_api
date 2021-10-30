@@ -30,6 +30,8 @@ services:
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=supersecretpassword
+    ports:
+      - "5432:5432"
       # in prodction add a encryped env var that overwrites this 
       # when pushing 
 
@@ -38,3 +40,6 @@ services:
 
 # get the core 26.
 # docker-compose run app sh -c "python manage.py startapp core"
+# docker-compose run app sh -c "python manage.py makemigrations core"
+# docker-compose run app sh -c "python manage.py migrate core"
+# sudo pkill -u postgres
