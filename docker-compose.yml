@@ -30,8 +30,8 @@ services:
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=supersecretpassword
-    ports:
-      - "5432:5432"
+    # ports:
+    #   - "5432:5432"
       # in prodction add a encryped env var that overwrites this 
       # when pushing 
 
