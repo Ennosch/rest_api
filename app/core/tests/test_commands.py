@@ -19,7 +19,6 @@ class CommandTests(TestCase):
     @patch('time.sleep', return_value=True)
     def test_wait_for_db(self, ts):
         """Test waiting for db"""
-        # import pdb; pdb.set_trace()
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:
             # raise OpError 5 time you call __getitem__
             gi.side_effect = [OperationalError] * 5 + [True]
